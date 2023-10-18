@@ -1,5 +1,7 @@
 from bytebank import Funcionario
 
-thiago = Funcionario('Thiago Melo', '13/03/2000', 1000)
+def teste_idade():
+    funcionario_teste = Funcionario('Teste', '13/03/2000', 5000)
+    print(f'Teste = {funcionario_teste.idade()}')
 
-print(thiago.idade())
+teste_idade()
