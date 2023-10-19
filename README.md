@@ -16,4 +16,11 @@ O primeiro **venv** refere-se a *virtual environment*, o ambiente de desenvolvim
 
 ### Rodando o teste
 Basta digitar no terminal: `pytest`     
-Para um relatório mais detalhado, basta digitar no terminal: `pytest -v`
+     
+Para um relatório mais detalhado, basta digitar no terminal: `pytest -v`    
+      
+Podemos executar um específico informando apenas uma palavra do método: `pyteste -v -k idade` porém esse método de filtrar pelo nome pode executar testes que não queríamos.     
+Para solucionar isso podemos import o mark de pytest e incluir decorators nos métodos. Para cada decorator iremos informar o nome.     
+Para rodar `pytest -v -m calcular_bonus`     
+O arquivo **pytest.ini** contém as configurações do pytest e podemos configurarnovos markers.    
+Ao rodar `pytest -v -m calcular_bonus`  não veremos mais warnings porque criamos o arquivo de configuração
