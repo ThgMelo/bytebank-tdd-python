@@ -24,3 +24,13 @@ Para solucionar isso podemos import o mark de pytest e incluir decorators nos m�
 Para rodar `pytest -v -m calcular_bonus`     
 O arquivo **pytest.ini** contém as configurações do pytest e podemos configurarnovos markers.    
 Ao rodar `pytest -v -m calcular_bonus`  não veremos mais warnings porque criamos o arquivo de configuração
+
+
+### Cobertura de testes
+Ao comparar lado a lado os arquivos **bytebank.py** e **test_bytebank.py**, podemos concluir que não há garantia de que todas as linhas de código estão cobertas por algum teste. Quando trabalhamos com testes, a intenção é ter 100% de cobertura por testes.     
+Para ter a garantia que todo o código será testado podemos usar a extensão **pytest-cov**. *Cov - coverage = cobertura*
+
+#### pytest-cov
+1. Instalação: `pip install pytest-cov`
+2. Executar: `pytest --cov=codigo tests/` Com isso descobrimos quantos porcentagem está coberto
+3. Relatório dos termos faltantes: `pytest --cov=codigo tests/ --cov-report term-missing`
