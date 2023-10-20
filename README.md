@@ -39,3 +39,26 @@ Para ter a garantia que todo o código será testado podemos usar a extensão **
 ### Ignorando linhas
 O pytest-covnos informar quanto de nossa classe está sendo testado, porém, podemos ignorar alguns desses testes.    
 Para isso criamos o arquivo **.coveragerc** e dentro informaremos os nomes dos métodos que queremos que ignore se foi testado ou não
+
+### Gerando relarórios
+Incluindo a informação `source = ./codigo` no arquivo **.coveragerc** podemos reduzir a sintaxe para gerar relatório: `pytest --cov`
+
+#### Alterando pasta que salva o relatório html
+Incluir a informação abaixo no arquivo **.coveragerc** 
+```
+[html]
+directory = coverage_relatorio_html
+```
+
+Rodar: `pytest --cov=codigo tests/ --cov-report html`
+
+### pytest.ini
+Podemos adotar no arquivo **pytest.ini** para que toda vez que executarmos o pytest ele execute gerando os relatório, para isso basta alterar o arquivo incluindo:
+```
+addopts = -v --cov=codigo tests/ --cov-report term-missing
+```
+
+Após isso, para gerar o relatório basta digitar no terminal: `pytest`
+
+### Relatórios em xml
+`pytest --junitxml report.xml`
