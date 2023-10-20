@@ -34,3 +34,8 @@ Para ter a garantia que todo o código será testado podemos usar a extensão **
 1. Instalação: `pip install pytest-cov`
 2. Executar: `pytest --cov=codigo tests/` Com isso descobrimos quantos porcentagem está coberto
 3. Relatório dos termos faltantes: `pytest --cov=codigo tests/ --cov-report term-missing`
+4. Relatório HTML: `pytest --cov=codigo tests/ --cov-report html`
+
+### Ignorando linhas
+O pytest-covnos informar quanto de nossa classe está sendo testado, porém, podemos ignorar alguns desses testes.    
+Para isso criamos o arquivo **.coveragerc** e dentro informaremos os nomes dos métodos que queremos que ignore se foi testado ou não
